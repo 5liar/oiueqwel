@@ -1,0 +1,10 @@
+/* 1. Restore the full circular avatar mask (removes the bottom-right cutout notch) */
+svg[class*="mask_"]:has(img[src*="484367262766202890"],img[src*="793964957799940137"]) > foreignObject {
+    mask: url(#svg-mask-avatar-default) !important;
+}
+
+/* 2. Hide the colored status dot, mobile phone icon, and typing indicator on the avatar */
+svg[class*="mask_"]:has(img[src*="484367262766202890"],img[src*="793964957799940137"]) > :not(foreignObject),
+div[class*="wrapper_"]:has(img[src*="484367262766202890"],img[src*="793964957799940137"]) rect[class*="pointerEvents_"] {
+    display: none !important;
+}
